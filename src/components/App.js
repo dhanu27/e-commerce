@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getProductsList } from "../actions";
-
+import Product from "./product";
 class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(getProductsList());
@@ -15,12 +15,7 @@ class App extends React.Component {
         App
         <div>
           {list &&
-            list.map((product, index) => (
-              <div>
-                <h3>{product.name}</h3>
-                {product.price}
-              </div>
-            ))}
+            list.map((product, index) => <Product product={product}></Product>)}
         </div>
       </div>
     );

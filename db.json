@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "sofa",
       "price": "1800",
       "rating": 3,
@@ -8,6 +9,7 @@
       "about": "Made of thin red felted fiber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home."
     },
     {
+      "id": 2,
       "name": "Carpet",
       "price": "2000",
       "rating": 4,

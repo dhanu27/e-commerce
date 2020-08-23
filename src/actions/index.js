@@ -14,6 +14,21 @@ export function getProductsList() {
   };
 }
 
+export function deleteProduct(id) {
+  const url =
+    "https://my-json-server.typicode.com/dhanu27/e-commerce/products" + id;
+  return function (dispatch) {
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("DATA", data);
+        getProductsList();
+      });
+  };
+}
+
 export function showAllProducts(products) {
   return {
     type: SHOW_PRODUCTS,
