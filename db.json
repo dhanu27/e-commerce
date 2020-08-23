@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "sofa",
+      "price": "1800",
+      "quantity": 5
+    },
+    {
+      "name": "Carpet",
+      "price": "2000",
+      "quantity": 6
+    }
+  ]
+}
