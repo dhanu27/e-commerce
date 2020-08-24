@@ -1,22 +1,71 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getProductsList } from "../actions";
+import { getCartProductsList } from "../actions";
 import Product from "./product";
+import AddProduct from "./AddProduct";
+import Cart from "./cart";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 class App extends React.Component {
   componentDidMount() {
-    this.props.dispatch(getProductsList());
+    this.props.dispatch(getCartProductsList());
   }
   render() {
-    const { list } = this.props.products;
-    console.log("list", list);
     console.log("PROPS", this.props);
+    const { products, cart } = this.props;
+    const count = cart.length;
     return (
       <div>
-        App
-        <div>
-          {list &&
-            list.map((product, index) => <Product product={product}></Product>)}
-        </div>
+        <Router>
+          <div>
+            <div>
+              <nav>
+                <ul>
+                  {/* <li>
+                  <Link to="/"></Link>
+                </li> */}
+                  <li>
+                    <ul>
+                      <li>
+                        <Link to="/Products">Products</Link>
+                      </li>
+                      <li>
+                        <Link to="/AddProducts">AddProducts</Link>
+                      </li>
+                      <li>
+                        <Link to="/cart">Cart</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="right">
+                    <div className="cart-icon">
+                      <img
+                        style={styles.image}
+                        src="https://image.flaticon.com/icons/svg/1170/1170627.svg"
+                      />
+                      <span className="show-number">{count}</span>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+            <Switch>
+              {/* <Route path="/">
+                <Product list={products}></Product>
+              </Route> */}
+              <Route path="/Products">
+                <Product list={products}></Product>
+              </Route>
+              <Route path="/AddProducts">
+                <AddProduct dispatch={this.props.dispatch} />
+              </Route>
+              <Route path="/cart">
+                <Cart list={cart} />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
@@ -24,7 +73,13 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     products: state.products,
+    cart: state.cart,
   };
 }
-
+const styles = {
+  image: {
+    height: 50,
+    width: 50,
+  },
+};
 export default connect(mapStateToProps)(App);

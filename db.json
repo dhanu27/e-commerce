@@ -1,20 +1,46 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "sofa",
-      "price": "1800",
+      "name": "Carpets",
+      "price": "10000",
       "rating": 3,
-      "img": "https://image.flaticon.com/icons/svg/2139/2139731.svg",
-      "about": "Made of thin red felted fiber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home."
+      "about": "Made of thin red felted fiber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home.",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31yQzQsDHjL.jpg",
+      "id": 4
     },
     {
-      "id": 2,
-      "name": "Carpet",
-      "price": "2000",
-      "rating": 4,
+      "name": "Phone",
+      "price": "9000",
+      "rating": "3",
+      "about": "Made in india ",
+      "img": "https://i.shgcdn.com/31824115-76ae-4ddb-b8e6-309c86103ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+      "id": 1598280327148
+    }
+  ],
+  "cart": [
+    {
+      "name": "Carpets",
+      "price": "2017",
+      "rating": "3",
+      "about": "Made of thin red felted f2iber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home.",
       "img": "https://images-na.ssl-images-amazon.com/images/I/31yQzQsDHjL.jpg",
-      "about": "Made of thin red felted fiber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home."
+      "id": 1
+    },
+    {
+      "name": "Carpets",
+      "price": "10000",
+      "rating": 3,
+      "about": "Made of thin red felted fiber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home.",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31yQzQsDHjL.jpg",
+      "id": 4
+    },
+    {
+      "name": "Phone",
+      "price": "9000",
+      "rating": "3",
+      "about": "Made in india ",
+      "img": "https://i.shgcdn.com/31824115-76ae-4ddb-b8e6-309c86103ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+      "id": 1598280327148
     }
   ]
 }

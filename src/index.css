@@ -13,7 +13,7 @@ code {
 }
 .product-card {
   width: 90%;
-  height: 100px;
+  height: 227px;
   border: 1px solid black;
   margin: 20px;
   display: flex;
@@ -38,18 +38,113 @@ code {
   border: 1px solid red;
 }
 .product-card .middle :nth-child(n) {
-  display: inline-block;
+  /* display: inline-block; */
   width: 100%;
   font-size: 1rem;
 }
 .product-card .middle .product-name {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-top: 1rem;
   margin-bottom: 20px;
 }
 
 .product-card .right {
+  display: inline-block;
   width: 48%;
+  height: 90%;
   font-size: 1rem;
   overflow: hidden;
+}
+.card-footer {
+  display: inline-block;
+}
+.card-footer button {
+  /* background-color: lightgreen; */
+  border: 1px solid black;
+  margin: 0.4rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.primary {
+  background-color: lightskyblue;
+}
+.save {
+  background-color: lightgreen;
+}
+.danger {
+  background-color: red;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+nav li {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  display: inline-block;
+}
+nav li .right {
+  text-align: right;
+}
+.cart-icon {
+  position: relative;
+  margin-right: 19px;
+}
+.show-number {
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  top: 0%;
+  left: 65%;
+  background-color: navajowhite;
+  text-align: center;
+}
+.addProduct {
+  margin: auto;
+  width: 70%;
+  height: 500px;
+  border: 2px solid black;
+  padding: 0.5rem;
+  background-color: grey;
+}
+
+.addProduct label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.addProduct input {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  /* margin: auto; */
+  /* margin-top: 1rem; */
+}
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.sortbttn {
+  margin-left: 85%;
+  margin-bottom: 17px;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+  cursor: pointer;
 }
