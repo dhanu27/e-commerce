@@ -9,7 +9,7 @@
       "id": 4
     },
     {
-      "name": "Phone",
+      "name": "Smart Phone",
       "price": "9000",
       "rating": "3",
       "about": "Made in india ",
@@ -18,14 +18,6 @@
     }
   ],
   "cart": [
-    {
-      "name": "Carpets",
-      "price": "2017",
-      "rating": "3",
-      "about": "Made of thin red felted f2iber, it can be used indoors or out to lend an air of authenticity to your event Give your guests the red carpet treatment red carpet runner lets you create a runway for your own movie premier, or maybe just a hollywood party in the comfort of your home.",
-      "img": "https://images-na.ssl-images-amazon.com/images/I/31yQzQsDHjL.jpg",
-      "id": 1
-    },
     {
       "name": "Carpets",
       "price": "10000",
