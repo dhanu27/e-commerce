@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addProduct } from "../actions";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class AddProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +70,7 @@ class AddProduct extends React.Component {
           <button type="submit" onClick={this.handleSave}>
             ADD
           </button>
+          <ToastContainer />
         </form>
       </div>
     );

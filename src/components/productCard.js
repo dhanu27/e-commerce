@@ -1,5 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import { store } from "react-notifications-component";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   getProductsList,
   addProductToCart,
@@ -22,6 +25,19 @@ class ProductCard extends React.Component {
       img: product.img,
     };
   }
+  Notification = (text) => {
+    store.addNotification({
+      title: "Dropbox",
+      message: text,
+      type: "default", // 'default', 'success', 'info', 'warning'
+      container: "bottom-left", // where to position the notifications
+      animationIn: ["animated", "fadeIn"], // animate.css classes that's applied
+      animationOut: ["animated", "fadeOut"], // animate.css classes that's applied
+      dismiss: {
+        duration: 3000,
+      },
+    });
+  };
   setEditingState = () => {
     console.log("Editing");
     this.setState({ editing: !this.state.editing });
@@ -31,7 +47,6 @@ class ProductCard extends React.Component {
     else this.props.dispatch(deleteProduct(id));
   };
   onChange = (e) => {
-    console.log("ghbjnkml");
     /*
           Because we named the inputs to match their
           corresponding values in state, it's
@@ -68,6 +83,10 @@ class ProductCard extends React.Component {
   };
   render() {
     const { product, cart } = this.props;
+    const arr = [];
+    for (let i = 0; i < 5; i++) {
+      arr.push(i);
+    }
     let { editing, name, price, rating, about } = this.state;
     console.log("PRODUCT", product);
     return (
@@ -103,14 +122,34 @@ class ProductCard extends React.Component {
           </div>
           <div className="rating">
             {editing ? (
-              <input
-                type="text"
-                defaultValue={product.rating}
-                name="rating"
-                onChange={this.onChange}
-              />
+              <div>
+                <label>Rating</label>
+                <input
+                  type="text"
+                  defaultValue={product.rating}
+                  name="rating"
+                  onChange={this.onChange}
+                />
+              </div>
             ) : (
-              product.rating
+              arr.map((i, index) =>
+                index < product.rating ? (
+                  <span>
+                    <img
+                      style={styles.star}
+                      src="https://image.flaticon.com/icons/svg/1828/1828884.svg"
+                    />
+                  </span>
+                ) : (
+                  <span>
+                    <img
+                      style={styles.star}
+                      src="https://image.flaticon.com/icons/svg/1828/1828970.svg"
+                    />
+                  </span>
+                )
+              )
+              // <div className="rating"></div>
             )}
           </div>
         </div>
@@ -171,9 +210,16 @@ class ProductCard extends React.Component {
             )}
           </div>
         </div>
+        <ToastContainer />
       </div>
     );
   }
 }
+const styles = {
+  star: {
+    height: 20,
+    width: 20,
+  },
+};
 
 export default ProductCard;

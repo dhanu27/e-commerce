@@ -5,6 +5,9 @@ import Product from "./product";
 import AddProduct from "./AddProduct";
 import Cart from "./cart";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+
 class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(getCartProductsList());
@@ -15,14 +18,12 @@ class App extends React.Component {
     const count = cart.length;
     return (
       <div>
+        <ReactNotification />
         <Router>
           <div>
             <div>
               <nav>
                 <ul>
-                  {/* <li>
-                  <Link to="/"></Link>
-                </li> */}
                   <li>
                     <ul>
                       <li>
@@ -51,9 +52,6 @@ class App extends React.Component {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
-              {/* <Route path="/">
-                <Product list={products}></Product>
-              </Route> */}
               <Route path="/Products">
                 <Product list={products}></Product>
               </Route>
@@ -62,6 +60,9 @@ class App extends React.Component {
               </Route>
               <Route path="/cart">
                 <Cart list={cart} />
+              </Route>
+              <Route path="/">
+                <Product list={products}></Product>
               </Route>
             </Switch>
           </div>

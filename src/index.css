@@ -148,3 +148,12 @@ h3 {
   border-radius: 1rem;
   cursor: pointer;
 }
+.notification-box {
+  position: relative;
+  top: 10%;
+  left: 40%;
+  width: 200px;
+  height: 100px;
+  font-size: medium;
+  background-color: green;
+}

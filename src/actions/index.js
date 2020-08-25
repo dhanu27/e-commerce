@@ -1,15 +1,20 @@
+import { toast } from "react-toastify";
+
 export const SHOW_PRODUCTS = "SHOW_PRODUCTS",
   ADD_PRODUCT = "ADD_PRODUCT",
   ADD_PRODUCT_CART = "ADD_PRODUCT_CART",
   SHOW_CART_PRODUCTS = "SHOW_CART_PRODUCTS",
   REMOVE_PRODUCT = "REMOVE_PRODUCT",
-  REMOVE_CART_PRODUCT = "REMOVE_CART_PRODUCT";
+  REMOVE_CART_PRODUCT = "REMOVE_CART_PRODUCT",
+  ADD_TOAST = "ADD_TOAST",
+  REMOVE_TOAST = "REMOVE_TOAST";
 
 //localhost:3000/products
-http: export function getProductsList() {
+export function getProductsList() {
   console.log("inside a ProductList");
-  const url = "http://my-json-server.typicode.com/dhanu27/e-commerce/products";
-  https: return function (dispatch) {
+  //http://localhost:3000/products
+  const url = " http://my-json-server.typicode.com/dhanu27/e-commerce/products";
+  return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
       .then((products) => {
@@ -64,6 +69,7 @@ export function addProduct(body) {
       .then((data) => {
         console.log("New Added Product", data);
         dispatch(addNewProduct(body));
+        toast.success("Product Added");
       });
   };
 }
@@ -81,7 +87,12 @@ export function addProductToCart(body) {
       .then((response) => response.json())
       .then((product) => {
         console.log("New Added Product", product);
+        // toast.success("Product Added to Your Cart");
         dispatch(addToCart(product));
+        toast.success("Product Added to Your Cart");
+      })
+      .catch(() => {
+        toast.error("Product May Be Already in Your Cart Or Try again");
       });
   };
 }
@@ -130,6 +141,7 @@ export function deleteProduct(id) {
       .then((data) => {
         console.log("DATA", data);
         dispatch(removeProduct(id));
+        toast.success("Product Deleted");
       });
   };
 }
@@ -147,6 +159,7 @@ export function deleteProductCart(id) {
       .then((data) => {
         console.log("DATA", data);
         dispatch(removeCartProduct(id));
+        toast.success("Product Deleted from Cart");
       });
   };
 }
