@@ -5,10 +5,11 @@ export const SHOW_PRODUCTS = "SHOW_PRODUCTS",
   REMOVE_PRODUCT = "REMOVE_PRODUCT",
   REMOVE_CART_PRODUCT = "REMOVE_CART_PRODUCT";
 
-export function getProductsList() {
+//localhost:3000/products
+http: export function getProductsList() {
   console.log("inside a ProductList");
-  const url = "http://localhost:3000/products";
-  return function (dispatch) {
+  const url = "http://my-json-server.typicode.com/dhanu27/e-commerce/products";
+  https: return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
       .then((products) => {
@@ -28,7 +29,8 @@ export function showAllProducts(products) {
 
 export function getCartProductsList() {
   console.log("inside aCard  ProductList");
-  const url = "http://localhost:3000/cart";
+  // const url = "http://localhost:3000/cart";
+  const url = "http://my-json-server.typicode.com/dhanu27/e-commerce/cart";
   return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
