@@ -13,7 +13,7 @@ export const SHOW_PRODUCTS = "SHOW_PRODUCTS",
 export function getProductsList() {
   console.log("inside a ProductList");
   //http://localhost:3000/products
-  const url = "http://my-json-server.typicode.com/dhanu27/e-commerce/products";
+  const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/products";
   return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
@@ -35,7 +35,7 @@ export function showAllProducts(products) {
 export function getCartProductsList() {
   console.log("inside aCard  ProductList");
   // const url = "http://localhost:3000/cart";
-  const url = "http://my-json-server.typicode.com/dhanu27/e-commerce/cart";
+  const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/cart";
   return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
