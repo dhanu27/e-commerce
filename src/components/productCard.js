@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { store } from "react-notifications-component";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
