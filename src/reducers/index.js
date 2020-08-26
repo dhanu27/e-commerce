@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 import products from "./product";
 import cart from "./cart";
-import toast from "./toast";
 
 export function removeProduct(product, id) {
   console.log("REmove Product", product);
@@ -13,5 +12,4 @@ export function removeProduct(product, id) {
 export default combineReducers({
   products,
   cart,
-  toast,
 });
