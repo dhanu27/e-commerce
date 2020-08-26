@@ -49,8 +49,6 @@ class App extends React.Component {
                 </ul>
               </nav>
             </div>
-            {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
             <Switch>
               <Route path="/Products">
                 <Product list={products}></Product>
