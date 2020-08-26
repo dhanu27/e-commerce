@@ -12,10 +12,10 @@
 ### Reducer :- 2 Reducer of product and cart . And combine in index.js of Reducer folder
 
 ### Component:
-#####  App :- Basic Layout with switch case for routes.
-#####  Product:- For Showing the Products
-#####  Cart :- For showing the Cart Products.
-#####  ProductCard :- For Showing Product details .
+   #####  App :- Basic Layout with switch case for routes.
+   #####  Product:- For Showing the Products
+   #####  Cart :- For showing the Cart Products.
+   #####  ProductCard :- For Showing Product details .
 
 ##### Store :- Store object={Product:[],Cart:[]}
 
