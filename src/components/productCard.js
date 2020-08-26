@@ -10,8 +10,6 @@ import {
   deleteProductCart,
 } from "../actions";
 
-// import { getProductsList } from "../actions";
-
 class ProductCard extends React.Component {
   constructor(props) {
     super(props);
@@ -25,21 +23,8 @@ class ProductCard extends React.Component {
       img: product.img,
     };
   }
-  Notification = (text) => {
-    store.addNotification({
-      title: "Dropbox",
-      message: text,
-      type: "default", // 'default', 'success', 'info', 'warning'
-      container: "bottom-left", // where to position the notifications
-      animationIn: ["animated", "fadeIn"], // animate.css classes that's applied
-      animationOut: ["animated", "fadeOut"], // animate.css classes that's applied
-      dismiss: {
-        duration: 3000,
-      },
-    });
-  };
+
   setEditingState = () => {
-    console.log("Editing");
     this.setState({ editing: !this.state.editing });
   };
   handleDelete = (id) => {
@@ -47,13 +32,7 @@ class ProductCard extends React.Component {
     else this.props.dispatch(deleteProduct(id));
   };
   onChange = (e) => {
-    /*
-          Because we named the inputs to match their
-          corresponding values in state, it's
-          super easy to update the state
-        */
     this.setState({ [e.target.name]: e.target.value });
-    console.log("STATE", this.state);
   };
   handleSave = (id) => {
     const body = {
@@ -149,7 +128,6 @@ class ProductCard extends React.Component {
                   </span>
                 )
               )
-              // <div className="rating"></div>
             )}
           </div>
         </div>

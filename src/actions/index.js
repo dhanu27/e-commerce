@@ -12,8 +12,8 @@ export const SHOW_PRODUCTS = "SHOW_PRODUCTS",
 //localhost:3000/products
 export function getProductsList() {
   console.log("inside a ProductList");
-  //http://localhost:3000/products
-  const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/products";
+  const url = "http://localhost:3000/products";
+  // const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/products";
   return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
@@ -34,14 +34,12 @@ export function showAllProducts(products) {
 
 export function getCartProductsList() {
   console.log("inside aCard  ProductList");
-  // const url = "http://localhost:3000/cart";
-  const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/cart";
+  const url = "http://localhost:3000/cart";
+  // const url = "https://my-json-server.typicode.com/dhanu27/e-commerce/cart";
   return function (dispatch) {
     fetch(url)
       .then((response) => response.json())
       .then((products) => {
-        console.log("PRODUCTS", products);
-        // dispatch an action to add search Result
         dispatch(showAllCartProducts(products));
       });
   };
@@ -74,7 +72,6 @@ export function addProduct(body) {
   };
 }
 export function addProductToCart(body) {
-  console.log("$$$$", body);
   const url = " http://localhost:3000/cart";
   return function (dispatch) {
     fetch(url, {
@@ -109,24 +106,6 @@ export function addToCart(product) {
     product,
   };
 }
-
-// export function updateProduct(id, body) {
-//   const url = " http://localhost:3000/products/" + id;
-//   return function (dispatch) {
-//     fetch(url, {
-//       method: "PUT",
-//       body: JSON.stringify({ body }),
-//       headers: {
-//         "Content-type": "application/json; charset=UTF-8", // Indicates the content
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log("DATA", data);
-//         getProductsList();
-//       });
-//   };
-// }
 
 export function deleteProduct(id) {
   console.log("ID", id);
