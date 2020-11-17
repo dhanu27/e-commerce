@@ -1,4 +1,5 @@
 ## This project on E-commerce website using React and Redux.Using Json:server(a fake Server).
+## Explained Video Link :- https://www.youtube.com/watch?v=Y7oxsaVu9rE
 ### Features
 #### Products :- Can edit product rating ,Price, description and ADD to cart or Delete a product option also.         
 #### Add Products :- Allow to add new Product on website
